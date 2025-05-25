@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPILER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CUSTOM LANGUAGE COMPILER</h1>
+            <p class="subtitle">Transform your code between programming languages with magic ✨</p>
+        </header>
+
+        <div class="translator-container">
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Input Code</h2>
+                    <div class="language-badge">Custom Language</div>
+                </div>
+                <textarea id="codeInput" placeholder="Enter your code here..."></textarea>
+                <div class="controls">
+                    <button id="runButton" class="btn primary">Run Code</button>
+                    <div class="language-selector">
+                        <label for="languageSelect">Translate to:</label>
+                        <select id="languageSelect">
+                            <option value="js">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="c">C</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-tabs">
+                    <button class="tab-btn active" data-tab="converted">Translated Code</button>
+                    <button class="tab-btn" data-tab="output">Execution Output</button>
+                    <button class="tab-btn" data-tab="documentation">Documentation</button>
+                </div>
+                <div class="tab-content active" id="convertedTab">
+                    <pre id="convertedCode"></pre>
+                </div>
+                <div class="tab-content" id="outputTab">
+                    <pre id="output"></pre>
+                </div>
+                <div class="tab-content" id="documentationTab">
+                    <div class="documentation-content">
+                        <h3>Custom Language Keywords</h3>
+                        <div class="keyword-card">
+                            <h4>maano</h4>
+                            <p>Declares a new variable.</p>
+                            <pre>maano x = 10</pre>
+                            <p class="example">Example: Creates a variable x with value 10</p>
+                        </div>
+                        <div class="keyword-card">
+                            <h4>likho</h4>
+                            <p>Prints output to console.</p>
+                            <pre>likho "Hello World"</pre>
+                            <p class="example">Example: Prints "Hello World" to console</p>
+                        </div>
+                        <div class="keyword-card">
+                            <h4>agar</h4>
+                            <p>Conditional statement (if).</p>
+                            <pre>agar x > 5 {
+    likho "x is greater than 5"
+}</pre>
+                            <p class="example">Example: Prints message if condition is true</p>
+                        </div>
+                        <div class="keyword-card">
+                            <h4>warna</h4>
+                            <p>Else statement</p>
+                            <pre>agar x > 5 {
+    likho "x is greater than 5"
+} warna {
+    likho "x is 5 or less"
+}</pre>
+                            <p class="example">Example: Prints different messages based on condition</p>
+                        </div>
+                        <div class="keyword-card">
+                            <h4>jabtak</h4>
+                            <p>While loop.</p>
+                            <pre>jabtak x < 10 {
+    likho x
+    x = x + 1
+}</pre>
+                            <p class="example">Example: Prints numbers from x to 9</p>
+                        </div>
+                        <div class="keyword-card">
+                            <h4>Operators</h4>
+                            <p>Supported operators: +, -, *, /, =, ==, !=, <, >, <=, >=</p>
+                            <pre>maano sum = 5 + 3
+maano isEqual = x == y</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>THANK YOU FOR GIVING US A CHANCE 😊!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
