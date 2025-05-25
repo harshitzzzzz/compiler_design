@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 position++;
                 continue;
             }
-
+// this is useful
             if (char === '"') {
                 position++;
                 let text = '';
