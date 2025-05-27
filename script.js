@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('runButton').addEventListener('click', compileAndRun);
-
+//lexing
     function lexer(input) {
         const tokens = [];
         let position = 0;
