@@ -215,7 +215,7 @@ bash
 npm test
 Test cases cover:
 
-Lexical analysis
+Lexical analysis(tokenization)
 
 Parsing
 
