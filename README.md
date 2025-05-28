@@ -35,6 +35,7 @@ A web-based compiler that translates a custom programming language to JavaScript
 1. Write code in the custom language:
 maano x = 10
 agar x > 5 {
+
 likho "Greater than 5"
 }
 
@@ -48,6 +49,11 @@ No installation needed - runs directly in browser:
 1. Clone repo
 2. Open `index.html`
 
+
+
+
+
+
 Or use the live demo: [demo-link]
 
 ## Project Structure
@@ -55,6 +61,10 @@ Or use the live demo: [demo-link]
 - `index.html` - Main interface
 - `styles.css` - All styling
 - `script.js` - Compiler implementation
+
+
+
+
   - Lexer, Parser, Code Generator
   - Execution engine
 
@@ -63,6 +73,10 @@ Or use the live demo: [demo-link]
 Contributions welcome! Please:
 1. Fork the project
 2. Create your feature branch
+
+
+
+
 3. Submit a pull request
 
 ## License
@@ -71,6 +85,9 @@ MIT License - free for personal and commercial use
 This keeps all key information while staying concise. You can:
 
 Add a screenshot.png
+
+
+
 
 Replace [demo-link] with actual URL if hosted
 
