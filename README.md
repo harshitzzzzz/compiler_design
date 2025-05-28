@@ -9,6 +9,7 @@ A web-based compiler that translates a custom programming language to JavaScript
 - **Custom Language Syntax** with Hindi-inspired keywords:
   - `maano` (declare variables)
   - `likho` (print output) 
+
   - `agar`/`warna` (if/else)
   - `jabtak` (while loops)
 
@@ -40,7 +41,8 @@ likho "Greater than 5"
 }
 
 
-2. Select target language
+2.
+ Select target language
 3. Click "Run Code" to see translation and output
 
 ## Installation
@@ -58,6 +60,7 @@ Or use the live demo: [demo-link]
 
 ## Project Structure
 
+
 - `index.html` - Main interface
 - `styles.css` - All styling
 - `script.js` - Compiler implementation
@@ -69,6 +72,7 @@ Or use the live demo: [demo-link]
   - Execution engine
 
 ## Contributing
+
 
 Contributions welcome! Please:
 1. Fork the project
@@ -82,6 +86,8 @@ Contributions welcome! Please:
 ## License
 
 MIT License - free for personal and commercial use
+
+
 This keeps all key information while staying concise. You can:
 
 Add a screenshot.png
@@ -98,6 +104,7 @@ The word count is approximately 300 words while covering all essential aspects o
 not word count 300 but in 300 different lines
 Here's a detailed README.md structured in approximately 300 lines (with technical details and setup instructions):
 
+
 markdown
 # Custom Language Compiler
 
@@ -107,11 +114,19 @@ markdown
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Language Syntax](#language-syntax)
+
 4. [Supported Targets](#supported-targets)
+
 5. [Architecture](#architecture)
+
 6. [Installation](#installation)
+
 7. [Development Setup](#development-setup)
+
+
 8. [API Reference](#api-reference)
+
+
 9. [Examples](#examples)
 10. [Testing](#testing)
 11. [Contributing](#contributing)
@@ -121,6 +136,7 @@ markdown
 A web-based compiler that transforms code from a custom Hindi-inspired language to multiple programming languages. Implements full compiler pipeline from lexing to code generation.
 
 ## Features <a name="features"></a>
+
 - Real-time code translation
 - Syntax highlighting
 - Multiple output targets
@@ -150,6 +166,11 @@ Output
 js
 likho "Hello World"  // Print statement
 Supported Targets <a name="supported-targets"></a>
+
+
+
+
+
 Language	Status	Notes
 JavaScript	✔	Full support
 Python	✔	Full support
