@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('runButton').addEventListener('click', compileAndRun);
-
+//lexing phase 
     function lexer(input) {
         const tokens = [];
         let position = 0;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 position++;
                 continue;
             }
-
+// this is useful
             if (char === '"') {
                 position++;
                 let text = '';
