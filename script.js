@@ -120,36 +120,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function parseStatement() {
             if (tokens.length === 0) return null;
-            const token = tokens.shift();
-
+            const token = tokens[0];
+        
             if (token.type === 'keyword' && token.value === 'maano') {
+                tokens.shift(); // consume 'maano'
                 const identifier = tokens.shift();
                 if (!identifier || identifier.type !== 'identifier') throw new SyntaxError('Expected identifier after "maano".');
                 if (!tokens[0] || tokens[0].value !== '=') throw new SyntaxError('Expected "=" after variable name.');
                 tokens.shift(); // consume '='
                 return { type: 'declaration', name: identifier.value, valueTokens: parseExpression(tokens) };
             }
-
+        
             if (token.type === 'identifier') {
-                if (!tokens[0] || tokens[0].value !== '=') throw new SyntaxError(`Expected "=" after identifier "${token.value}"`);
+                const identifier = tokens.shift();
+                if (!tokens[0] || tokens[0].value !== '=') throw new SyntaxError(`Expected "=" after identifier "${identifier.value}"`);
                 tokens.shift(); // consume '='
-                return { type: 'assignment', name: token.value, valueTokens: parseExpression(tokens) };
+                return { type: 'assignment', name: identifier.value, valueTokens: parseExpression(tokens) };
             }
-
+        
             if (token.type === 'keyword' && token.value === 'likho') {
+                tokens.shift(); // consume 'likho'
                 return { type: 'print', valueTokens: parseExpression(tokens) };
             }
-
+        
             if (token.type === 'keyword' && token.value === 'agar') {
+                tokens.shift(); // consume 'agar'
                 const left = tokens.shift();
                 const op = tokens.shift();
                 const right = tokens.shift();
                 if (!left || !op || !right) throw new SyntaxError('Invalid condition in agar');
-
+        
                 if (!tokens[0] || tokens[0].value !== '{') throw new SyntaxError('Expected { after condition');
                 tokens.shift(); // consume '{'
                 const body = parseBlock();
-
+        
                 let elseBody = [];
                 if (tokens.length > 0 && tokens[0].value === 'warna') {
                     tokens.shift(); // consume 'warna'
@@ -157,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     tokens.shift(); // consume '{'
                     elseBody = parseBlock();
                 }
-
+        
                 return {
                     type: 'conditional',
                     condition: { left, operator: op.value, right },
@@ -165,26 +169,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     elseBody,
                 };
             }
-
+        
             if (token.type === 'keyword' && token.value === 'jabtak') {
+                tokens.shift(); // consume 'jabtak'
                 const left = tokens.shift();
                 const op = tokens.shift();
                 const right = tokens.shift();
                 if (!left || !op || !right) throw new SyntaxError('Invalid condition in jabtak');
-
+        
                 if (!tokens[0] || tokens[0].value !== '{') throw new SyntaxError('Expected { after jabtak condition');
                 tokens.shift(); // consume '{'
                 const body = parseBlock();
-
+        
                 return {
                     type: 'loop',
                     condition: { left, operator: op.value, right },
                     body,
                 };
             }
-
+        
             throw new SyntaxError(`Unexpected token "${token.value}"`);
         }
+        
 
         while (tokens.length > 0) {
             const stmt = parseStatement();
